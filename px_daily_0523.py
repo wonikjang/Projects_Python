@@ -52,7 +52,7 @@ pddf1 = pd.DataFrame({'date':datey, 'ytest':ytest, 'res_predicted':res_predicted
 pddf1 = pddf1.set_index('date')
 day1 = pddf1.plot(figsize=(12,8),title = 'GLM - Training: 2015/01~2016/06 Daily data')
 fig = day1.get_figure()
-fig.savefig('GLM_daily.jpg')
+fig.savefig('GLM_daily15011606.jpg')
 
 rmse = np.sqrt(mean_squared_error(res_predicted, ytest))
 print("GLM RMSE %f" % rmse )
@@ -63,7 +63,7 @@ pddf11 = pddf11.set_index('month')
 pddf11 = pddf11.groupby(['month'])['res_predicted','ytest'].mean()
 month1 = pddf11.plot(figsize=(12,8),title = 'GLM - Training: 2015/01~2016/06 Monthly data')
 fig = month1.get_figure()
-fig.savefig('GLM_month.jpg')
+fig.savefig('GLM_month15011606.jpg')
 
 ###### Group by weeky
 pddf12 = pd.DataFrame({'week':weeky, 'ytest':ytest, 'res_predicted':res_predicted})
@@ -72,7 +72,7 @@ pddf12 = pddf12.set_index('week')
 pddf12 = pddf12.groupby(['week'])['res_predicted','ytest'].mean()
 week1 = pddf12.plot(figsize=(12,8),title = 'GLM - Training: 2015/01~2016/06 Weekly data')
 fig = week1.get_figure()
-fig.savefig('GLM_week.jpg')
+fig.savefig('GLM_week15011606.jpg')
 
 
 ############################################################## SVR Regression
@@ -88,7 +88,7 @@ pddf2 = pd.DataFrame({'date':datey, 'ytest':ytest, 'res_predicted':res_predicted
 pddf2 = pddf2.set_index('date')
 day2 = pddf2.plot(figsize=(12,8),title = 'GLM - Training: 2015/01~2016/06 Daily data')
 fig = day2.get_figure()
-fig.savefig('SVR_daily.jpg')
+fig.savefig('SVR_daily15011606.jpg')
 
 rmse = np.sqrt(mean_squared_error(res_predicted1, ytest))
 print("SVR RMSE %f" % rmse )
@@ -100,7 +100,7 @@ pddf21 = pddf21.set_index('month')
 pddf21 = pddf21.groupby(['month'])['res_predicted','ytest'].mean()
 month2 = pddf21.plot(figsize=(12,8),title = 'SVR - Training: 2015/01~2016/06 Monthly data')
 fig = month2.get_figure()
-fig.savefig('SVR_month.jpg')
+fig.savefig('SVR_month15011606.jpg')
 
 ###### Group by weeky
 
@@ -110,14 +110,14 @@ pddf22 = pddf22.set_index('week')
 pddf22 = pddf22.groupby(['week'])['res_predicted','ytest'].mean()
 week2 = pddf22.plot(figsize=(12,8),title = 'SVR - Training: 2015/01~2016/06 Weekly data')
 fig = week2.get_figure()
-fig.savefig('SVR_week.jpg')
+fig.savefig('SVR_week15011606.jpg')
 
 
 
 
 
 ################################################## training: 2015.4 ~ 2016.9 #########################################
-nstart1 = 54; ntest1 = 379;
+nstart1 = 54; ntest1 = 397;
 
 X, Xtest = data_split2(Xall, nstart1, ntest1);
 y, ytest = data_split2(yall, nstart1, ntest1)
@@ -143,9 +143,9 @@ print('Feature Name: %s' % list( dfx2.iloc[:,:res_feature_num2].columns.values )
 ##### Plot & Check the accuracy
 pddf3 = pd.DataFrame({'date':datey, 'ytest':ytest, 'res_predicted':res_predicted2})
 pddf3 = pddf3.set_index('date')
-day3 = pddf3.plot(figsize=(12,8),title = 'GLM - Training: 2015/01~2016/06 Daily data')
+day3 = pddf3.plot(figsize=(12,8),title = 'GLM - Training: 2015/04~2016/09 Daily data')
 fig = day3.get_figure()
-fig.savefig('GLM_daily.jpg')
+fig.savefig('GLM_daily15041609.jpg')
 
 rmse = np.sqrt(mean_squared_error(res_predicted2, ytest))
 print("GLM RMSE %f" % rmse )
@@ -154,18 +154,18 @@ print("GLM RMSE %f" % rmse )
 pddf31 = pd.DataFrame({'month':monthy, 'ytest':ytest, 'res_predicted':res_predicted2})
 pddf31 = pddf31.set_index('month')
 pddf31 = pddf31.groupby(['month'])['res_predicted','ytest'].mean()
-month3 = pddf31.plot(figsize=(12,8),title = 'GLM - Training: 2015/01~2016/06 Monthly data')
+month3 = pddf31.plot(figsize=(12,8),title = 'GLM - Training: 2015/04~2016/09 Monthly data')
 fig = month3.get_figure()
-fig.savefig('GLM_month.jpg')
+fig.savefig('GLM_month15041609.jpg')
 
 ###### Group by weeky
 pddf32 = pd.DataFrame({'week':weeky, 'ytest':ytest, 'res_predicted':res_predicted2})
 pddf32['week'] = pddf12['week'].apply(str)
 pddf32 = pddf32.set_index('week')
 pddf32 = pddf32.groupby(['week'])['res_predicted','ytest'].mean()
-week3 = pddf32.plot(figsize=(12,8),title = 'GLM - Training: 2015/01~2016/06 Weekly data')
+week3 = pddf32.plot(figsize=(12,8),title = 'GLM - Training: 2015/04~2016/09 Weekly data')
 fig = week3.get_figure()
-fig.savefig('GLM_week.jpg')
+fig.savefig('GLM_week15041609.jpg')
 
 
 ############################################################## SVR Regression
@@ -179,9 +179,9 @@ print('Feature Name: %s' % list( dfx.iloc[:,:res_feature_num3].columns.values ) 
 ##### Plot & Check the accuracy
 pddf4 = pd.DataFrame({'date':datey, 'ytest':ytest, 'res_predicted':res_predicted3})
 pddf4 = pddf4.set_index('date')
-day4 = pddf4.plot(figsize=(12,8),title = 'GLM - Training: 2015/01~2016/06 Daily data')
+day4 = pddf4.plot(figsize=(12,8),title = 'GLM - Training: 2015/04~2016/09 Daily data')
 fig = day4.get_figure()
-fig.savefig('SVR_daily.jpg')
+fig.savefig('SVR_daily15041609.jpg')
 
 rmse = np.sqrt(mean_squared_error(res_predicted3, ytest))
 print("SVR RMSE %f" % rmse )
@@ -191,9 +191,9 @@ print("SVR RMSE %f" % rmse )
 pddf41 = pd.DataFrame({'month':monthy, 'ytest':ytest, 'res_predicted':res_predicted3})
 pddf41 = pddf41.set_index('month')
 pddf41 = pddf41.groupby(['month'])['res_predicted','ytest'].mean()
-month4 = pddf41.plot(figsize=(12,8),title = 'SVR - Training: 2015/01~2016/06 Monthly data')
+month4 = pddf41.plot(figsize=(12,8),title = 'SVR - Training: 2015/04~2016/09 Monthly data')
 fig = month4.get_figure()
-fig.savefig('SVR_month.jpg')
+fig.savefig('SVR_month15041609.jpg')
 
 ###### Group by weeky
 
@@ -201,14 +201,9 @@ pddf42 = pd.DataFrame({'week':weeky, 'ytest':ytest, 'res_predicted':res_predicte
 pddf42['week'] = pddf22['week'].apply(str)
 pddf42 = pddf42.set_index('week')
 pddf42 = pddf42.groupby(['week'])['res_predicted','ytest'].mean()
-week4 = pddf42.plot(figsize=(12,8),title = 'SVR - Training: 2015/01~2016/06 Weekly data')
+week4 = pddf42.plot(figsize=(12,8),title = 'SVR - Training: 2015/04~2016/09 Weekly data')
 fig = week4.get_figure()
-fig.savefig('SVR_week.jpg')
-
-
-
-
-
+fig.savefig('SVR_week15041609.jpg')
 
 
 
