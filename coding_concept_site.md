@@ -18,3 +18,8 @@ Activation Function
 Difference b/w Trees 
 
   https://www.quora.com/What-is-the-difference-between-a-tree-a-prefix-tree-and-a-radix-tree
+
+
+Deep Learing : Stochastiv pooling, maxout ... 
+ 
+  https://laonple.blog.me/220830178487
