@@ -36,6 +36,37 @@ def LSC(P, Q, n, m):
     
 LSC('aa','aab',2,3)
 
+# 1.1 Memoized 
+
+
+
+def LSC(P, Q, n, m, arr):
+    
+#    arr = np.zeros([n + 1 , m + 1 ])
+#    if arr is not None:
+#        return arr[n][m]
+    
+    # ===== 
+    if n == 0 or m ==0 :
+        result = 0 
+        
+    elif P[n-1] == Q[m-1]:
+        result = 1 + LSC(P, Q, n-1, m, arr)
+        
+    elif P[n-1] != Q[m-1] :
+        tmp1 = LSC(P,Q,n-1, m, arr)
+        tmp2 = LSC(P,Q,n,m-1, arr)
+        result = max(tmp1, tmp2)
+        
+
+    arr[n][m] = result 
+    print(arr)
+    return result
+
+    
+res0 = LSC('aa','aab',2,3, np.zeros([3,4]))
+
+
 
 # 2. Number of cases add up to Target 
 
