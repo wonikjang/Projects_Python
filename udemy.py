@@ -110,7 +110,7 @@ def is_rotation(A,B):
             break 
     
     if key_i == -1:
-        return false
+        return False
     
     for i in range(len(A)):
         j = (key_i + i) % len(a)
