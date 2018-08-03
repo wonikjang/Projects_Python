@@ -12,8 +12,6 @@ Created on Thu Aug  2 23:11:05 2018
 
 arr = [1,2,4,5,10,20,50]
 
-
-
 # ============ 1. Most Frequently Occuring Item  : O(n)
 
 
@@ -121,6 +119,24 @@ def is_rotation(A,B):
 
 
 is_rotation(a,b)
+
+
+
+
+
+# ======== Daily Coding Problem 3 (Google)
+
+class Node:
+    
+    def __init__(self, val, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+node = Node('root', Node('left', Node('left.left')), Node('right') ) 
+
+assert deserialize(serialize(node)) 
+left.left.val == 'left.left'
 
 
 
