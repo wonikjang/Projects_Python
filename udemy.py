@@ -121,7 +121,32 @@ def is_rotation(A,B):
 is_rotation(a,b)
 
 
+# ========= 4. Non Repeating chara return 
 
+
+def single_char(given_array):
+    
+    single_item  = None 
+    dict_count = {}
+    
+    if given_array is None:
+        return None
+    
+    for item in given_array:
+
+        if item not in dict_count.keys():
+            dict_count[item] = 1
+        else: 
+            dict_count[item] += 1
+
+            
+        if dict_count[item] == 1: 
+            single_item = item
+
+        
+    return single_item
+
+single_char([1,1,2])
 
 
 # ======== Daily Coding Problem 3 (Google)
